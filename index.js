@@ -57,6 +57,10 @@ app.use("/api/messages", messageRoute);
 // if (process.env.NODE_ENV === "production") {
 //   app.use(express.static())
 // }
+
+app.get("/", (req, res) => {
+  res.send("Welcome to Sociallite backend")
+})
 app.listen(process.env.PORT || 8080, () => {
   console.log("Server is running on port " + process.env.PORT);
 });
