@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const cors = require("cors");
 
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
@@ -23,6 +24,8 @@ mongoose
   .then(() => console.log("Database connected!"))
   .catch((err) => console.log(err));
 
+
+app.use(cors());
 app.use("/images", express.static(path.join(__dirname, "public/images")));
 
 //Middlewares
